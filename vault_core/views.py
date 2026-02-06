@@ -59,6 +59,10 @@ def first_api(request):
         
 
 # register api view
+@extend_schema(
+    request=ResourceSerializers,
+    responses=ResourceSerializers
+)
 @api_view(['POST'])
 def register_api(request):
     if request.method=='POST':
