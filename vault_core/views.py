@@ -13,8 +13,8 @@ from drf_spectacular.utils import extend_schema
 
 # Create your views here.
 @extend_schema(
-    request=ResourceSerializers,
-    responses=ResourceSerializers
+    request=RegisterSerializers,
+    responses=RegisterSerializers
 )
 @api_view(['GET','POST'])
 @permission_classes([IsAuthenticated]) # adds authentication layer for validating user
