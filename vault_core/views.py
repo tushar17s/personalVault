@@ -48,7 +48,7 @@ def first_api(request):
         data = data.filter(tag__id=tags)
     
     paginator = PageNumberPagination()
-    paginator.page_size = 1
+    paginator.page_size = 5
 
     paginated_queryset = paginator.paginate_queryset(data, request)
 
