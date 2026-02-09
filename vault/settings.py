@@ -49,10 +49,12 @@ INSTALLED_APPS = [
     'vault_core',
     'rest_framework',
     'rest_framework.authtoken',
-    'drf_spectacular'
+    'drf_spectacular' ,
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -149,3 +151,5 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 1,
     
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
