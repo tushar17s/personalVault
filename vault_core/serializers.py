@@ -5,6 +5,7 @@ class ResourceSerializers(serializers.ModelSerializer) :
     class Meta :
         model = Resources
         fields = '__all__'
+        files = serializers.CharField(required=False)
         read_only_fields = ['owner']
         tags = serializers.PrimaryKeyRelatedField(
         many=True,
