@@ -14,6 +14,15 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
+import cloudinary
+
+cloudinary.config(
+  cloud_name = "decjyewlk",
+  api_key = "674264813222784",
+  api_secret = "**********",
+)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,6 +60,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'drf_spectacular' ,
     'corsheaders',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
